@@ -13,7 +13,7 @@ struct SwiftPuzzlesApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView(catalog: catalog)
+            RootView(catalog: catalog)
         }
     }
 }

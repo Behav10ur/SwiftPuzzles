@@ -3,16 +3,19 @@
     {
       "id": "basics",
       "title": "Основы",
+      "gradient": { "from": "#3F8EF7", "to": "#0E2148" },
       "topicIDs": ["optionals", "enums"]
     },
     {
       "id": "memory-and-types",
       "title": "Память и типы",
+      "gradient": { "from": "#4D0CFF", "to": "#14052F" },
       "topicIDs": ["value-vs-reference", "arc"]
     },
     {
       "id": "concurrency",
       "title": "Concurrency",
+      "gradient": { "from": "#72F2FF", "to": "#0B2420" },
       "topicIDs": ["async-await"]
     }
   ],
