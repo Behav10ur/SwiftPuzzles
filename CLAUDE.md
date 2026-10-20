@@ -1,3 +1,7 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # SwiftPuzzles
  
 iOS-приложение: пазлы со схемами Swift-концепций на пастельном градиенте. Собрал пазл — получил короткую теорию с примером кода. Потом тема возвращается на повторение (режим «недостающий кусок», интервалы по Лейтнеру).
@@ -8,6 +12,26 @@ iOS-приложение: пазлы со схемами Swift-концепци�
 - SwiftUI, SwiftData, iOS 17+
 - Без сторонних зависимостей, пока явно не договоримся
 - Контент (темы, теория, картинки) — JSON + ассеты в бандле; в SwiftData только прогресс и настройки
+## Сборка и тесты
+Одна схема `SwiftPuzzles`, линтера и SPM-зависимостей нет — всё через `xcodebuild`:
+```bash
+# сборка
+xcodebuild -project SwiftPuzzles.xcodeproj -scheme SwiftPuzzles \
+  -destination 'platform=iOS Simulator,name=iPhone 18 Pro' build
+# все unit-тесты
+xcodebuild -project SwiftPuzzles.xcodeproj -scheme SwiftPuzzles \
+  -destination 'platform=iOS Simulator,name=iPhone 18 Pro' test -only-testing:SwiftPuzzlesTests
+# один тест (Swift Testing: Target/Suite/func())
+xcodebuild -project SwiftPuzzles.xcodeproj -scheme SwiftPuzzles \
+  -destination 'platform=iOS Simulator,name=iPhone 18 Pro' test \
+  '-only-testing:SwiftPuzzlesTests/SwiftPuzzlesTests/example()'
+```
+## Настройки проекта, которые легко упустить
+- Папки синхронизированы с Xcode (`PBXFileSystemSynchronizedRootGroup`): новый файл внутри `SwiftPuzzles/` попадает в таргет сам. `project.pbxproj` руками не править.
+- В таргете приложения `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor` + Approachable Concurrency: весь код по умолчанию на главном акторе, `nonisolated async`-функции выполняются на акторе вызывающего. Чтобы реально уйти с main (например, тяжёлая нарезка картинки) — нужен `@concurrent`.
+- Swift language mode 5 (`SWIFT_VERSION = 5.0`).
+- Deployment target приложения — iOS 17.6: API новее — только через `if #available`. У тестовых таргетов стоит 27.0, поэтому тесты гоняются только на симуляторе iOS 27.
+- Unit-тесты — Swift Testing (`@Test`, `#expect`), UI-тесты — XCTest.
 ## Ключевые решения (не менять без обсуждения)
 - Куски пазла прямоугольные, без «ушек»
 - Сложность (размер сетки) выбирает пользователь; картинка режется на куски в коде под выбранную сетку
