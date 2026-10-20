@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SwiftPuzzlesApp: App {
+    private let catalog = ContentLoader.loadOrCrash()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(catalog: catalog)
         }
     }
 }

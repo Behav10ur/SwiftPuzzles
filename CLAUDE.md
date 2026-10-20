@@ -24,7 +24,7 @@ xcodebuild -project SwiftPuzzles.xcodeproj -scheme SwiftPuzzles \
 # один тест (Swift Testing: Target/Suite/func())
 xcodebuild -project SwiftPuzzles.xcodeproj -scheme SwiftPuzzles \
   -destination 'platform=iOS Simulator,name=iPhone 18 Pro' test \
-  '-only-testing:SwiftPuzzlesTests/SwiftPuzzlesTests/example()'
+  '-only-testing:SwiftPuzzlesTests/ContentTests/bundledContentIsValid()'
 ```
 ## Настройки проекта, которые легко упустить
 - Папки синхронизированы с Xcode (`PBXFileSystemSynchronizedRootGroup`): новый файл внутри `SwiftPuzzles/` попадает в таргет сам. `project.pbxproj` руками не править.

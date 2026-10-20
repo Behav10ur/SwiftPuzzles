@@ -1,0 +1,71 @@
+{
+  "albums": [
+    {
+      "id": "basics",
+      "title": "Основы",
+      "topicIDs": ["optionals", "enums"]
+    },
+    {
+      "id": "memory-and-types",
+      "title": "Память и типы",
+      "topicIDs": ["value-vs-reference", "arc"]
+    },
+    {
+      "id": "concurrency",
+      "title": "Concurrency",
+      "topicIDs": ["async-await"]
+    }
+  ],
+  "topics": [
+    {
+      "id": "optionals",
+      "title": "Optionals и if let / guard let",
+      "imageName": "mock_schema",
+      "theory": "Optional — это тип, который либо содержит значение, либо nil. Записывается он как String?, а внутри это enum с двумя случаями: .some(value) и .none. Достать значение можно через if let: внутри блока оно уже не опциональное. guard let делает то же самое, но с ранним выходом: если значения нет, функция завершается, а ниже по коду переменная доступна без опционала. Принудительное извлечение через ! упадёт на nil, поэтому его стоит избегать.",
+      "codeSample": "func greet(_ name: String?) {\n    guard let name else {\n        print(\"Hello, stranger\")\n        return\n    }\n    print(\"Hello, \\(name)\")\n}\n\nlet input: String? = \"Swift\"\nif let input {\n    greet(input)\n}",
+      "docsURL": "https://docs.swift.org/latest/documentation/the-swift-programming-language/thebasics/#Optionals",
+      "wrongImageNames": ["mock_schema_broken"],
+      "errorRegion": { "x": 0.715, "y": 0.75, "width": 0.139, "height": 0.104 }
+    },
+    {
+      "id": "enums",
+      "title": "Enum с associated values и switch",
+      "imageName": "mock_schema",
+      "theory": "Enum описывает конечный набор вариантов. К каждому варианту можно привязать associated values — данные, которые хранятся вместе с ним и у разных вариантов могут быть разными. Разбирать такой enum удобно через switch: значения достаются прямо в case через let. Компилятор требует, чтобы switch был исчерпывающим, поэтому при добавлении нового варианта он покажет все места, где его нужно обработать. Так ошибка «забыл про состояние» ловится ещё при сборке.",
+      "codeSample": "enum LoadState {\n    case idle\n    case loading(progress: Double)\n    case failed(message: String)\n}\n\nfunc describe(_ state: LoadState) -> String {\n    switch state {\n    case .idle: \"Waiting\"\n    case .loading(let progress): \"Loading \\(Int(progress * 100))%\"\n    case .failed(let message): \"Error: \\(message)\"\n    }\n}",
+      "docsURL": "https://docs.swift.org/latest/documentation/the-swift-programming-language/enumerations/",
+      "wrongImageNames": ["mock_schema_broken"],
+      "errorRegion": { "x": 0.715, "y": 0.75, "width": 0.139, "height": 0.104 }
+    },
+    {
+      "id": "value-vs-reference",
+      "title": "Value и reference types",
+      "imageName": "mock_schema",
+      "theory": "Структуры и enum — value types: при присваивании или передаче в функцию получается независимая копия. Классы — reference types: переменные хранят ссылку на один и тот же объект, и изменение через одну ссылку видно через все остальные. Поэтому let у структуры запрещает менять её свойства, а у класса — только переназначать саму ссылку. В Swift по умолчанию выбирают struct, а class — когда нужна общая изменяемая сущность с идентичностью. Копирование стандартных коллекций дешёвое благодаря copy-on-write: настоящая копия создаётся только при изменении.",
+      "codeSample": "struct PointValue { var x = 0 }\nfinal class PointRef { var x = 0 }\n\nvar a = PointValue()\nvar b = a\nb.x = 10\nprint(a.x) // 0: b is a copy\n\nlet c = PointRef()\nlet d = c\nd.x = 10\nprint(c.x) // 10: same object",
+      "docsURL": "https://docs.swift.org/latest/documentation/the-swift-programming-language/classesandstructures/",
+      "wrongImageNames": ["mock_schema_broken"],
+      "errorRegion": { "x": 0.715, "y": 0.75, "width": 0.139, "height": 0.104 }
+    },
+    {
+      "id": "arc",
+      "title": "ARC, weak и unowned",
+      "imageName": "mock_schema",
+      "theory": "ARC (Automatic Reference Counting) считает сильные ссылки на каждый экземпляр класса и освобождает память, когда их не остаётся. Если два объекта держат друг друга сильными ссылками, счётчик никогда не обнулится — это retain cycle и утечка памяти. Цикл разрывают, делая одну из ссылок weak: она не увеличивает счётчик и сама становится nil, когда объект удалён. unowned тоже не удерживает объект, но не опциональна: обращение к ней после удаления объекта приведёт к падению. Чаще всего циклы возникают между родителем и делегатом или в замыканиях, которые захватывают self.",
+      "codeSample": "final class Owner {\n    var pet: Pet?\n    deinit { print(\"Owner freed\") }\n}\n\nfinal class Pet {\n    weak var owner: Owner? // weak breaks the cycle\n    deinit { print(\"Pet freed\") }\n}\n\nvar owner: Owner? = Owner()\nowner?.pet = Pet()\nowner?.pet?.owner = owner\nowner = nil // both deinits run",
+      "docsURL": "https://docs.swift.org/latest/documentation/the-swift-programming-language/automaticreferencecounting/",
+      "wrongImageNames": ["mock_schema_broken"],
+      "errorRegion": { "x": 0.715, "y": 0.75, "width": 0.139, "height": 0.104 }
+    },
+    {
+      "id": "async-await",
+      "title": "async / await и Task",
+      "imageName": "mock_schema",
+      "theory": "Функция с пометкой async может приостановиться, пока ждёт результат — например, ответ сети, — и при этом не блокирует поток. Вызывается она через await: это точка, где выполнение может уступить поток другой работе. Из синхронного кода в асинхронный попадают через Task { }, который запускает новую задачу. async let позволяет начать несколько операций параллельно и дождаться их вместе. Ошибки обрабатываются привычными throws и try await.",
+      "codeSample": "func fetchUser(id: Int) async throws -> String {\n    try await Task.sleep(for: .seconds(1))\n    return \"User \\(id)\"\n}\n\nTask {\n    async let first = fetchUser(id: 1)\n    async let second = fetchUser(id: 2)\n    let users = try await [first, second]\n    print(users)\n}",
+      "docsURL": "https://docs.swift.org/latest/documentation/the-swift-programming-language/concurrency/",
+      "wrongImageNames": ["mock_schema_broken"],
+      "errorRegion": { "x": 0.715, "y": 0.75, "width": 0.139, "height": 0.104 }
+    }
+  ]
+}
