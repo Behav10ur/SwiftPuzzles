@@ -94,6 +94,16 @@ struct ContentTests {
         #expect(!album.isTopicUnlocked("unknown", solvedTopicIDs: []))
     }
 
+    @Test func topicStatusFollowsProgress() {
+        let album = Album.stub(id: "basics", topicIDs: ["optionals", "enums", "errors"])
+
+        #expect(album.status(of: "optionals", solvedTopicIDs: [], startedTopicIDs: []) == .next)
+        #expect(album.status(of: "enums", solvedTopicIDs: [], startedTopicIDs: []) == .locked)
+        #expect(album.status(of: "optionals", solvedTopicIDs: ["optionals"], startedTopicIDs: []) == .solved)
+        #expect(album.status(of: "enums", solvedTopicIDs: ["optionals"], startedTopicIDs: ["enums"]) == .inProgress)
+        #expect(album.status(of: "errors", solvedTopicIDs: ["optionals"], startedTopicIDs: ["enums"]) == .locked)
+    }
+
     private func validate(
         _ catalog: ContentCatalog,
         imageExists: (String) -> Bool = { _ in true }

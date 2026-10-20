@@ -19,7 +19,7 @@ struct HomeView: View {
             }
             .navigationTitle("Альбомы")
             .navigationDestination(for: Album.self) { album in
-                AlbumView(album: album, topics: catalog.topics(in: album), solvedTopicIDs: [])
+                AlbumView(album: album, topics: catalog.topics(in: album), solvedTopicIDs: [], startedTopicIDs: [])
             }
         }
     }

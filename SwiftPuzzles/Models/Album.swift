@@ -21,4 +21,10 @@ struct Album: Codable, Identifiable, Hashable {
         guard let index = topicIDs.firstIndex(of: topicID) else { return false }
         return index == 0 || solvedTopicIDs.contains(topicIDs[index - 1])
     }
+
+    func status(of topicID: String, solvedTopicIDs: Set<String>, startedTopicIDs: Set<String>) -> TopicStatus {
+        if solvedTopicIDs.contains(topicID) { return .solved }
+        guard isTopicUnlocked(topicID, solvedTopicIDs: solvedTopicIDs) else { return .locked }
+        return startedTopicIDs.contains(topicID) ? .inProgress : .next
+    }
 }
