@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		CD65A8FC3087AF23005CF57B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD65A8E63087AF23005CF57B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD65A8ED3087AF23005CF57B;
+			remoteInfo = SwiftPuzzles;
+		};
+		CD65A9063087AF23005CF57B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD65A8E63087AF23005CF57B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD65A8ED3087AF23005CF57B;
+			remoteInfo = SwiftPuzzles;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD65A8EE3087AF23005CF57B /* SwiftPuzzles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPuzzles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD65A8FB3087AF23005CF57B /* SwiftPuzzlesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftPuzzlesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD65A9053087AF23005CF57B /* SwiftPuzzlesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftPuzzlesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CD65A8F03087AF23005CF57B /* SwiftPuzzles */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SwiftPuzzles;
+			sourceTree = "<group>";
+		};
+		CD65A8FE3087AF23005CF57B /* SwiftPuzzlesTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SwiftPuzzlesTests;
+			sourceTree = "<group>";
+		};
+		CD65A9083087AF23005CF57B /* SwiftPuzzlesUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SwiftPuzzlesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD65A8EB3087AF23005CF57B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		CD65A8F83087AF23005CF57B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		CD65A9023087AF23005CF57B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD65A8E53087AF23005CF57B = {
+			isa = PBXGroup;
+			children = (
+				CD65A8F03087AF23005CF57B /* SwiftPuzzles */,
+				CD65A8FE3087AF23005CF57B /* SwiftPuzzlesTests */,
+				CD65A9083087AF23005CF57B /* SwiftPuzzlesUITests */,
+				CD65A8EF3087AF23005CF57B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD65A8EF3087AF23005CF57B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD65A8EE3087AF23005CF57B /* SwiftPuzzles.app */,
+				CD65A8FB3087AF23005CF57B /* SwiftPuzzlesTests.xctest */,
+				CD65A9053087AF23005CF57B /* SwiftPuzzlesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD65A8ED3087AF23005CF57B /* SwiftPuzzles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD65A90D3087AF23005CF57B /* Build configuration list for PBXNativeTarget "SwiftPuzzles" */;
+			buildPhases = (
+				CD65A8EA3087AF23005CF57B /* Sources */,
+				CD65A8EB3087AF23005CF57B /* Frameworks */,
+				CD65A8EC3087AF23005CF57B /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				CD65A8F03087AF23005CF57B /* SwiftPuzzles */,
+			);
+			name = SwiftPuzzles;
+			productName = SwiftPuzzles;
+			productReference = CD65A8EE3087AF23005CF57B /* SwiftPuzzles.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD65A8FA3087AF23005CF57B /* SwiftPuzzlesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD65A9103087AF23005CF57B /* Build configuration list for PBXNativeTarget "SwiftPuzzlesTests" */;
+			buildPhases = (
+				CD65A8F73087AF23005CF57B /* Sources */,
+				CD65A8F83087AF23005CF57B /* Frameworks */,
+				CD65A8F93087AF23005CF57B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD65A8FD3087AF23005CF57B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CD65A8FE3087AF23005CF57B /* SwiftPuzzlesTests */,
+			);
+			name = SwiftPuzzlesTests;
+			productName = SwiftPuzzlesTests;
+			productReference = CD65A8FB3087AF23005CF57B /* SwiftPuzzlesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD65A9043087AF23005CF57B /* SwiftPuzzlesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD65A9133087AF23005CF57B /* Build configuration list for PBXNativeTarget "SwiftPuzzlesUITests" */;
+			buildPhases = (
+				CD65A9013087AF23005CF57B /* Sources */,
+				CD65A9023087AF23005CF57B /* Frameworks */,
+				CD65A9033087AF23005CF57B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD65A9073087AF23005CF57B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CD65A9083087AF23005CF57B /* SwiftPuzzlesUITests */,
+			);
+			name = SwiftPuzzlesUITests;
+			productName = SwiftPuzzlesUITests;
+			productReference = CD65A9053087AF23005CF57B /* SwiftPuzzlesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD65A8E63087AF23005CF57B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2710;
+				LastUpgradeCheck = 2710;
+				TargetAttributes = {
+					CD65A8ED3087AF23005CF57B = {
+						CreatedOnToolsVersion = 27.1;
+					};
+					CD65A8FA3087AF23005CF57B = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = CD65A8ED3087AF23005CF57B;
+					};
+					CD65A9043087AF23005CF57B = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = CD65A8ED3087AF23005CF57B;
+					};
+				};
+			};
+			buildConfigurationList = CD65A8E93087AF23005CF57B /* Build configuration list for PBXProject "SwiftPuzzles" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD65A8E53087AF23005CF57B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CD65A8EF3087AF23005CF57B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD65A8ED3087AF23005CF57B /* SwiftPuzzles */,
+				CD65A8FA3087AF23005CF57B /* SwiftPuzzlesTests */,
+				CD65A9043087AF23005CF57B /* SwiftPuzzlesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD65A8EC3087AF23005CF57B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		CD65A8F93087AF23005CF57B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		CD65A9033087AF23005CF57B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD65A8EA3087AF23005CF57B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		CD65A8F73087AF23005CF57B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		CD65A9013087AF23005CF57B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD65A8FD3087AF23005CF57B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD65A8ED3087AF23005CF57B /* SwiftPuzzles */;
+			targetProxy = CD65A8FC3087AF23005CF57B /* PBXContainerItemProxy */;
+		};
+		CD65A9073087AF23005CF57B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD65A8ED3087AF23005CF57B /* SwiftPuzzles */;
+			targetProxy = CD65A9063087AF23005CF57B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CD65A90B3087AF23005CF57B /* Debug configuration for PBXProject "SwiftPuzzles" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = YL24Q55R69;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD65A90C3087AF23005CF57B /* Release configuration for PBXProject "SwiftPuzzles" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = YL24Q55R69;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD65A90E3087AF23005CF57B /* Debug configuration for PBXNativeTarget "SwiftPuzzles" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YL24Q55R69;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.behav10ur.SwiftPuzzles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD65A90F3087AF23005CF57B /* Release configuration for PBXNativeTarget "SwiftPuzzles" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YL24Q55R69;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.behav10ur.SwiftPuzzles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD65A9113087AF23005CF57B /* Debug configuration for PBXNativeTarget "SwiftPuzzlesTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YL24Q55R69;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.behav10ur.SwiftPuzzlesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftPuzzles.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftPuzzles";
+			};
+			name = Debug;
+		};
+		CD65A9123087AF23005CF57B /* Release configuration for PBXNativeTarget "SwiftPuzzlesTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YL24Q55R69;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.behav10ur.SwiftPuzzlesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftPuzzles.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftPuzzles";
+			};
+			name = Release;
+		};
+		CD65A9143087AF23005CF57B /* Debug configuration for PBXNativeTarget "SwiftPuzzlesUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YL24Q55R69;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.behav10ur.SwiftPuzzlesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwiftPuzzles;
+			};
+			name = Debug;
+		};
+		CD65A9153087AF23005CF57B /* Release configuration for PBXNativeTarget "SwiftPuzzlesUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YL24Q55R69;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.behav10ur.SwiftPuzzlesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwiftPuzzles;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD65A8E93087AF23005CF57B /* Build configuration list for PBXProject "SwiftPuzzles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD65A90B3087AF23005CF57B /* Debug configuration for PBXProject "SwiftPuzzles" */,
+				CD65A90C3087AF23005CF57B /* Release configuration for PBXProject "SwiftPuzzles" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		CD65A90D3087AF23005CF57B /* Build configuration list for PBXNativeTarget "SwiftPuzzles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD65A90E3087AF23005CF57B /* Debug configuration for PBXNativeTarget "SwiftPuzzles" */,
+				CD65A90F3087AF23005CF57B /* Release configuration for PBXNativeTarget "SwiftPuzzles" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		CD65A9103087AF23005CF57B /* Build configuration list for PBXNativeTarget "SwiftPuzzlesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD65A9113087AF23005CF57B /* Debug configuration for PBXNativeTarget "SwiftPuzzlesTests" */,
+				CD65A9123087AF23005CF57B /* Release configuration for PBXNativeTarget "SwiftPuzzlesTests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		CD65A9133087AF23005CF57B /* Build configuration list for PBXNativeTarget "SwiftPuzzlesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD65A9143087AF23005CF57B /* Debug configuration for PBXNativeTarget "SwiftPuzzlesUITests" */,
+				CD65A9153087AF23005CF57B /* Release configuration for PBXNativeTarget "SwiftPuzzlesUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD65A8E63087AF23005CF57B /* Project object */;
+	validationLevel = 1;
+}
