@@ -9,7 +9,7 @@ iOS-приложение: пазлы со схемами Swift-концепци�
 Полный план MVP: `docs/MVP.md`. Перед работой над новым этапом сверяйся с ним.
  
 ## Стек
-- SwiftUI, SwiftData, iOS 17+
+- SwiftUI, SwiftData, iOS 18.6+
 - Без сторонних зависимостей, пока явно не договоримся
 - Контент (темы, теория, картинки) — JSON + ассеты в бандле; в SwiftData только прогресс и настройки
 ## Сборка и тесты
@@ -30,7 +30,7 @@ xcodebuild -project SwiftPuzzles.xcodeproj -scheme SwiftPuzzles \
 - Папки синхронизированы с Xcode (`PBXFileSystemSynchronizedRootGroup`): новый файл внутри `SwiftPuzzles/` попадает в таргет сам. `project.pbxproj` руками не править.
 - В таргете приложения `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor` + Approachable Concurrency: весь код по умолчанию на главном акторе, `nonisolated async`-функции выполняются на акторе вызывающего. Чтобы реально уйти с main (например, тяжёлая нарезка картинки) — нужен `@concurrent`.
 - Swift language mode 5 (`SWIFT_VERSION = 5.0`).
-- Deployment target приложения — iOS 17.6: API новее — только через `if #available`. У тестовых таргетов стоит 27.0, поэтому тесты гоняются только на симуляторе iOS 27.
+- Deployment target — iOS 18.6 у всех таргетов: API новее — только через `if #available`. Обратную совместимость с iOS 17 не тащим (аудитория — разработчики на свежих iOS).
 - Unit-тесты — Swift Testing (`@Test`, `#expect`), UI-тесты — XCTest.
 ## Ключевые решения (не менять без обсуждения)
 - Куски пазла прямоугольные, без «ушек»
