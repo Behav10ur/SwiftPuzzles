@@ -7,10 +7,34 @@ nonisolated struct PuzzleBoard: Codable, Equatable {
     /// `slots[position]` is the piece lying at `position`. Piece N belongs at position N.
     private(set) var slots: [Int]
 
+    init(grid: GridSize, slots: [Int]) {
+        precondition(slots.sorted() == Array(0..<grid.cellCount), "slots must contain every piece exactly once")
+        self.grid = grid
+        self.slots = slots
+    }
+
     var isSolved: Bool { slots == Array(slots.indices) }
 
     func position(of piece: Int) -> Int? {
         slots.firstIndex(of: piece)
+    }
+
+    mutating func swapPieces(at first: Int, _ second: Int) {
+        slots.swapAt(first, second)
+    }
+
+    /// Sides of `position` where the neighbouring piece is not the one that belongs there.
+    func mismatchedSides(of position: Int) -> Set<GridSize.Side> {
+        let piece = slots[position]
+        var sides: Set<GridSize.Side> = []
+        for side in GridSize.Side.allCases {
+            guard let neighborPosition = grid.neighbor(of: position, toward: side) else { continue }
+            // Piece N belongs at cell N, so its rightful neighbour is simply the neighbour of cell N.
+            if grid.neighbor(of: piece, toward: side) != slots[neighborPosition] {
+                sides.insert(side)
+            }
+        }
+        return sides
     }
 
     static func solved(grid: GridSize) -> PuzzleBoard {

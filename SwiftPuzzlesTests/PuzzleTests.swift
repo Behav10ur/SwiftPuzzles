@@ -23,6 +23,65 @@ struct PuzzleTests {
         #expect(grid.origin(of: 19, in: board) == CGPoint(x: 300, y: 400))
     }
 
+    @Test func pointMapsToCell() {
+        let grid = GridSize(columns: 3, rows: 4)
+        let board = CGSize(width: 300, height: 400)
+
+        #expect(grid.index(at: CGPoint(x: 150, y: 150), in: board) == 4)
+        #expect(grid.index(at: CGPoint(x: 100, y: 0), in: board) == 1, "a boundary belongs to the next cell")
+        #expect(grid.index(at: CGPoint(x: 299.9, y: 399.9), in: board) == 11)
+        #expect(grid.index(at: CGPoint(x: -1, y: 50), in: board) == nil)
+        #expect(grid.index(at: CGPoint(x: 300, y: 50), in: board) == nil)
+        #expect(grid.index(at: CGPoint(x: 50, y: 400), in: board) == nil)
+    }
+
+    @Test func neighborsStopAtEdges() {
+        let grid = GridSize(columns: 3, rows: 4)
+
+        #expect(grid.neighbor(of: 0, toward: .top) == nil)
+        #expect(grid.neighbor(of: 0, toward: .left) == nil)
+        #expect(grid.neighbor(of: 0, toward: .right) == 1)
+        #expect(grid.neighbor(of: 0, toward: .bottom) == 3)
+        #expect(grid.neighbor(of: 2, toward: .right) == nil, "no wrapping to the next row")
+        #expect(grid.neighbor(of: 3, toward: .left) == nil)
+        #expect(grid.neighbor(of: 11, toward: .bottom) == nil)
+    }
+
+    @Test func swappingBackSolvesBoard() {
+        var board = PuzzleBoard.solved(grid: Difficulty.easy.grid)
+
+        board.swapPieces(at: 0, 5)
+        #expect(!board.isSolved)
+        #expect(board.slots[0] == 5 && board.slots[5] == 0)
+
+        board.swapPieces(at: 0, 5)
+        #expect(board.isSolved)
+    }
+
+    @Test func solvedBoardHasNoMismatches() {
+        let board = PuzzleBoard.solved(grid: Difficulty.medium.grid)
+
+        #expect(board.slots.indices.allSatisfy { board.mismatchedSides(of: $0).isEmpty })
+    }
+
+    @Test func swappedPiecesMismatchTheirNeighbors() {
+        // 3×4 with pieces 0 and 1 swapped: [1, 0, 2, 3, ...]
+        var board = PuzzleBoard.solved(grid: Difficulty.easy.grid)
+        board.swapPieces(at: 0, 1)
+
+        #expect(board.mismatchedSides(of: 0) == [.right, .bottom])
+        #expect(board.mismatchedSides(of: 1) == [.left, .right, .bottom])
+        #expect(board.mismatchedSides(of: 2) == [.left])
+        #expect(board.mismatchedSides(of: 4) == [.top])
+    }
+
+    @Test func nextNumberAcrossRowBreakIsNotANeighbor() {
+        // On 3×4, piece 3 starts the second row, so it does not fit to the right of piece 2.
+        let board = PuzzleBoard(grid: Difficulty.easy.grid, slots: [2, 3, 0, 1] + Array(4..<12))
+
+        #expect(board.mismatchedSides(of: 0).contains(.right))
+    }
+
     @Test(arguments: Difficulty.allCases)
     func shuffleMovesEveryPiece(difficulty: Difficulty) {
         let grid = difficulty.grid
