@@ -1,6 +1,6 @@
 import Foundation
 
-struct Topic: Codable, Identifiable {
+struct Topic: Codable, Identifiable, Hashable {
     let id: String
     let title: String
     let imageName: String

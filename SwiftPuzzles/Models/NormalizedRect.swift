@@ -1,7 +1,7 @@
 import Foundation
 
 /// A rectangle in image-relative coordinates (0...1), so it stays valid for any grid size.
-struct NormalizedRect: Codable, Equatable {
+struct NormalizedRect: Codable, Hashable {
     let x: Double
     let y: Double
     let width: Double

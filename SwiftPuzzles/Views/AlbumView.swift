@@ -6,23 +6,34 @@ struct AlbumView: View {
     let solvedTopicIDs: Set<String>
     let startedTopicIDs: Set<String>
 
+    @AppStorage(Difficulty.storageKey) private var difficulty: Difficulty = .easy
+
     private let columns = [GridItem(.flexible(), spacing: 20), GridItem(.flexible(), spacing: 20)]
 
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 24) {
                 ForEach(topics) { topic in
-                    TopicTile(
-                        topic: topic,
-                        status: album.status(
-                            of: topic.id,
-                            solvedTopicIDs: solvedTopicIDs,
-                            startedTopicIDs: startedTopicIDs
-                        )
+                    let status = album.status(
+                        of: topic.id,
+                        solvedTopicIDs: solvedTopicIDs,
+                        startedTopicIDs: startedTopicIDs
                     )
+                    if status == .locked {
+                        TopicTile(topic: topic, status: status)
+                    } else {
+                        NavigationLink(value: topic) {
+                            TopicTile(topic: topic, status: status)
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
             }
             .padding()
+        }
+        // Outside the lazy grid: destinations inside lazy containers may not be registered in time.
+        .navigationDestination(for: Topic.self) { topic in
+            PuzzleView(topic: topic, grid: difficulty.grid)
         }
         .navigationTitle(album.title)
         .navigationBarTitleDisplayMode(.inline)

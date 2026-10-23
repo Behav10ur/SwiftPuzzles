@@ -28,7 +28,8 @@ xcodebuild -project SwiftPuzzles.xcodeproj -scheme SwiftPuzzles \
 ```
 ## Настройки проекта, которые легко упустить
 - Папки синхронизированы с Xcode (`PBXFileSystemSynchronizedRootGroup`): новый файл внутри `SwiftPuzzles/` попадает в таргет сам. `project.pbxproj` руками не править.
-- В таргете приложения `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor` + Approachable Concurrency: весь код по умолчанию на главном акторе, `nonisolated async`-функции выполняются на акторе вызывающего. Чтобы реально уйти с main (например, тяжёлая нарезка картинки) — нужен `@concurrent`.
+- В таргете приложения `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor` + Approachable Concurrency: весь код по умолчанию на главном акторе, `nonisolated async`-функции выполняются на акторе вызывающего. Чтобы реально уйти с main — нужен `@concurrent`. Чистые типы данных и логики (`GridSize`, `PuzzleBoard`, `ContentIssue`) помечены `nonisolated`.
+- Куски пазла не вырезаются из картинки: `PieceView` рисует целую картинку размером с доску, сдвигает её через `offset` и обрезает `clipped()` по ячейке.
 - Swift language mode 5 (`SWIFT_VERSION = 5.0`).
 - Deployment target — iOS 18.6 у всех таргетов: API новее — только через `if #available`. Обратную совместимость с iOS 17 не тащим (аудитория — разработчики на свежих iOS).
 - Unit-тесты — Swift Testing (`@Test`, `#expect`), UI-тесты — XCTest.
